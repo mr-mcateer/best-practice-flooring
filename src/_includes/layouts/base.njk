@@ -34,8 +34,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;600;700&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Preload critical hero image -->
-  <link rel="preload" as="image" href="/assets/images/hero/hero-main.jpg" fetchpriority="high">
+  <!-- Preload critical hero image (only on pages with hero) -->
+  {% if heroImage %}
+  <link rel="preload" as="image" href="{{ heroImage }}" fetchpriority="high">
+  {% elif page.url == "/" %}
+  <link rel="preload" as="image" href="/assets/images/hero/hero-tile.jpg" fetchpriority="high">
+  {% endif %}
 
   <!-- CSS -->
   <link rel="stylesheet" href="/assets/css/output.css">
@@ -99,6 +103,13 @@
           {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "07:00", "closes": "18:00"},
           {"@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "14:00"}
         ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "3",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Flooring Services",
@@ -174,14 +185,46 @@
       });
     })();
 
+    // Services dropdown toggle
+    (function() {
+      var trigger = document.querySelector('.nav-dropdown-trigger');
+      var dropdown = document.querySelector('.nav-dropdown');
+      if (!trigger || !dropdown) return;
+      trigger.addEventListener('click', function() {
+        var open = dropdown.classList.toggle('is-open');
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      document.addEventListener('click', function(e) {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+        }
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
+          dropdown.classList.remove('is-open');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.focus();
+        }
+      });
+    })();
+
     // Mobile nav toggle
     (function() {
       var btn = document.getElementById('mobile-nav-toggle');
       var nav = document.getElementById('mobile-nav');
       if (!btn || !nav) return;
+      var hamburger = btn.querySelector('.hamburger-icon');
+      var closeIcon = btn.querySelector('.close-icon');
+      function toggleIcons(open) {
+        if (hamburger) hamburger.style.display = open ? 'none' : '';
+        if (closeIcon) closeIcon.style.display = open ? '' : 'none';
+        btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
       btn.addEventListener('click', function() {
         var open = nav.classList.toggle('is-open');
         btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggleIcons(open);
         if (open) {
           nav.querySelector('a').focus();
         }
@@ -190,8 +233,17 @@
         if (e.key === 'Escape' && nav.classList.contains('is-open')) {
           nav.classList.remove('is-open');
           btn.setAttribute('aria-expanded', 'false');
+          toggleIcons(false);
           btn.focus();
         }
+      });
+      // Close mobile nav when any link inside it is clicked
+      nav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          nav.classList.remove('is-open');
+          btn.setAttribute('aria-expanded', 'false');
+          toggleIcons(false);
+        });
       });
     })();
 
