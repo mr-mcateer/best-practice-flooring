@@ -30,7 +30,9 @@ jobs:
         run: npx @tailwindcss/cli -i src/assets/css/main.css -o src/assets/css/output.css --minify
 
       - name: Build site
-        run: npx @11ty/eleventy
+        run: npx @11ty/eleventy --pathprefix="/best-practice-flooring/"
+        env:
+          ELEVENTY_PATH_PREFIX: /best-practice-flooring/
 
       - uses: actions/upload-pages-artifact@v3
         with:

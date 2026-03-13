@@ -1,4 +1,9 @@
+const { EleventyHtmlBasePlugin } = require("@11ty/eleventy");
+
 module.exports = function(eleventyConfig) {
+  // Rewrite all absolute URLs to respect pathPrefix (for GitHub Pages subpath)
+  eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+
   // Pass through static assets
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
@@ -32,6 +37,7 @@ module.exports = function(eleventyConfig) {
     },
     templateFormats: ["njk", "md", "html"],
     htmlTemplateEngine: "njk",
-    markdownTemplateEngine: "njk"
+    markdownTemplateEngine: "njk",
+    pathPrefix: process.env.ELEVENTY_PATH_PREFIX || "/"
   };
 };
