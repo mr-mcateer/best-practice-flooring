@@ -556,13 +556,13 @@ body {
 }
 
 .btn-secondary {
-  background-color: rgba(255,255,255,0.08);
+  background-color: rgba(255,255,255,0.12);
   color: #fff;
-  border-color: rgba(255,255,255,0.7);
+  border-color: #fff;
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255,255,255,0.18);
+  background-color: rgba(255,255,255,0.22);
   border-color: #fff;
 }
 
@@ -884,20 +884,6 @@ body {
     background-color: #1E3044;
     border-top: 1px solid var(--border-default);
     border-bottom: 1px solid var(--border-default);
-  }
-}
-
-/* Fix white CTA buttons in dark mode */
-[data-theme="dark"] .cta-section .btn[style*="background:#fff"],
-[data-theme="dark"] .cta-section .btn[style*="background: #fff"] {
-  background-color: var(--brand-accent) !important;
-  color: #fff !important;
-}
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .cta-section .btn[style*="background:#fff"],
-  :root:not([data-theme="light"]) .cta-section .btn[style*="background: #fff"] {
-    background-color: var(--brand-accent) !important;
-    color: #fff !important;
   }
 }
 
