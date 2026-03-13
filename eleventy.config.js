@@ -17,17 +17,6 @@ module.exports = function(eleventyConfig) {
   // Add a year shortcode for copyright
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
-  // Add phone format filter
-  eleventyConfig.addFilter("phoneFormat", (phone) => {
-    const digits = phone.replace(/\D/g, "");
-    return `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
-  });
-
-  // Add phone href filter
-  eleventyConfig.addFilter("phoneHref", (phone) => {
-    return `tel:+1${phone.replace(/\D/g, "")}`;
-  });
-
   return {
     dir: {
       input: "src",

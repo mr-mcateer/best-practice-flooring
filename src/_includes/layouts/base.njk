@@ -6,8 +6,10 @@
   <title>{{ titleTag or title }} | Best Practice Flooring</title>
   <meta name="description" content="{{ description or site.description }}">
   <meta name="keywords" content="{{ keywords or 'flooring installation, hardwood floors, LVP flooring, tile installation, laminate flooring, Corvallis flooring, Independence Oregon, flooring contractor, floor installer near me, Mid-Willamette Valley' }}">
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="{{ robots or 'index, follow' }}">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  <meta name="geo.region" content="US-OR">
+  <meta name="geo.placename" content="Independence">
 
   <!-- Open Graph -->
   <meta property="og:title" content="{{ titleTag or title }} | Best Practice Flooring">

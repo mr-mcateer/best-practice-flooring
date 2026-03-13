@@ -684,10 +684,6 @@ body {
   transform: translateY(-6px);
 }
 
-.service-card-img-wrap {
-  overflow: hidden;
-}
-
 .service-card-img {
   display: block;
   width: 100%;
@@ -1323,43 +1319,6 @@ body {
   color: var(--text-secondary);
   font-size: var(--text-sm);
   line-height: 1.6;
-}
-
-/* ========================================
-   CONTENT PROSE (reusable text styling)
-   ======================================== */
-
-.prose p {
-  color: var(--text-secondary);
-  line-height: 1.8;
-  margin-bottom: var(--space-lg);
-}
-
-.prose p:last-child {
-  margin-bottom: 0;
-}
-
-.prose ul {
-  color: var(--text-secondary);
-  line-height: 2;
-  padding-left: var(--space-lg);
-  margin-bottom: var(--space-lg);
-}
-
-.prose h2 {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 700;
-  margin-bottom: var(--space-lg);
-  color: var(--text-primary);
-}
-
-.prose h3 {
-  font-size: var(--text-lg);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-top: var(--space-2xl);
-  margin-bottom: var(--space-md);
 }
 
 /* ========================================
