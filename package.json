@@ -1,0 +1,15 @@
+{
+  "name": "best-practice-flooring",
+  "version": "1.0.0",
+  "description": "Best Practice Flooring LLC — Owner-operated flooring installation in Independence, OR",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "serve": "npx @11ty/eleventy --serve",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "@tailwindcss/cli": "^4.0.0",
+    "tailwindcss": "^4.0.0"
+  }
+}

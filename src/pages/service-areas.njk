@@ -1,0 +1,59 @@
+---
+layout: layouts/base.njk
+title: "Service Areas"
+description: "Best Practice Flooring serves Independence, Corvallis, Salem, Albany, Monmouth, Dallas, Philomath & the entire Mid-Willamette Valley. Free estimates available."
+permalink: /service-areas/
+---
+
+<div class="page-header">
+  <h1>Flooring Installation in Corvallis, Independence &amp; the Mid-Willamette Valley</h1>
+  <p>Based in Independence, OR — proudly serving Polk and Benton County communities.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="areas-grid">
+      {% for area in site.serviceAreas %}
+      <div class="area-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        {{ area }}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="section-inner">
+    <div style="max-width:var(--content-width);margin:0 auto;">
+      <h2 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-lg);color:var(--text-primary);">About Our Service Area</h2>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Independence &amp; Monmouth</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">Our home base. As Independence residents, we're deeply connected to this community. We provide hardwood, LVP, tile, and laminate flooring installation to homeowners throughout Independence and neighboring Monmouth.</p>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Corvallis</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">Home to Oregon State University, Corvallis has a vibrant housing market with homes ranging from historic Craftsman bungalows to modern new construction. We install flooring across all Corvallis neighborhoods and understand the unique needs of both older and newer homes.</p>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Salem</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">Oregon's capital city is just a short drive from Independence. We serve Salem homeowners with professional flooring installation, from South Salem to West Salem and everywhere in between.</p>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Albany</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">Known for its historic architecture, Albany has a strong demand for quality flooring. Whether you're renovating a Victorian home or updating a newer build, we've got the experience to handle it.</p>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Dallas</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">Just north of Independence in Polk County, Dallas homeowners are some of our closest neighbors. We provide the same quality flooring installation to Dallas as we do to every community we serve.</p>
+
+      <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--text-primary);margin-top:var(--space-xl);margin-bottom:var(--space-sm);">Philomath &amp; Surrounding Areas</h3>
+      <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:var(--space-lg);">From Philomath to Adair Village, Lewisburg to Tangent — we serve communities throughout Benton and Polk counties. If you're in the Mid-Willamette Valley and need flooring, chances are we can help.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>In Our Service Area? Let's Talk Flooring.</h2>
+  <p>Free estimates for homeowners across the Mid-Willamette Valley.</p>
+  <div class="cta-buttons">
+    <a href="/contact/" class="btn btn-primary" style="background:#fff;color:var(--brand-primary);">Request an Estimate</a>
+    <a href="tel:+1{{ site.team.ake.phone }}" class="btn btn-secondary">Call {{ site.team.ake.phoneDisplay }}</a>
+  </div>
+</section>

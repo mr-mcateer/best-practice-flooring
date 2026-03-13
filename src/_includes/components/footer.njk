@@ -1,0 +1,48 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h3>{{ site.name }}</h3>
+      <p>Owner-operated flooring installation serving the greater Corvallis region. Based in Independence, OR.</p>
+      <p style="margin-top:var(--space-md);">
+        <strong>Ake:</strong> <a href="tel:+1{{ site.team.ake.phone }}">{{ site.team.ake.phoneDisplay }}</a><br>
+        <strong>Sarah:</strong> <a href="tel:+1{{ site.team.sarah.phone }}">{{ site.team.sarah.phoneDisplay }}</a>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h3>Services</h3>
+      <ul>
+        {% for svc in site.services %}
+        <li><a href="/services/{{ svc.slug }}/">{{ svc.name }}</a></li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="/about/">About Us</a></li>
+        <li><a href="/portfolio/">Our Work</a></li>
+        <li><a href="/faq/">FAQ</a></li>
+        <li><a href="/contact/">Contact</a></li>
+        <li><a href="/service-areas/">Service Areas</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Hours</h3>
+      <p>
+        <strong>Mon – Fri:</strong> {{ site.hours.weekdays }}<br>
+        <strong>Saturday:</strong> {{ site.hours.saturday }}<br>
+        <strong>Sunday:</strong> {{ site.hours.sunday }}
+      </p>
+      <p style="margin-top:var(--space-md);">
+        <strong>Serving:</strong> Independence, Corvallis, Salem, Albany, Monmouth, Dallas, Philomath &amp; more
+      </p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {% year %} {{ site.name }}. All rights reserved. | Based in Independence, OR</p>
+  </div>
+</footer>
