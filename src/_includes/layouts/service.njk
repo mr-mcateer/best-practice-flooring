@@ -11,6 +11,27 @@ layout: layouts/base.njk
   </div>
 </section>
 
+<div class="trust-bar" style="background:var(--bg-secondary);padding:var(--space-md) 0;border-bottom:1px solid var(--border-color);">
+  <div class="section-inner" style="display:flex;justify-content:center;flex-wrap:wrap;gap:var(--space-md) var(--space-xl);font-size:var(--text-sm);color:var(--text-secondary);font-weight:500;">
+    <span style="display:flex;align-items:center;gap:var(--space-xs);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      Licensed &amp; Insured
+    </span>
+    <span style="display:flex;align-items:center;gap:var(--space-xs);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+      Owner-Installed by Ake
+    </span>
+    <span style="display:flex;align-items:center;gap:var(--space-xs);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+      Free Estimates
+    </span>
+    <span style="display:flex;align-items:center;gap:var(--space-xs);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--brand-primary)" stroke-width="2" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      5-Star Rated
+    </span>
+  </div>
+</div>
+
 <section class="section">
   <div class="section-inner" style="max-width:var(--content-width);margin:0 auto;">
     {{ content | safe }}
@@ -93,6 +114,7 @@ layout: layouts/base.njk
     <a href="/contact/" class="btn btn-primary" style="background:#fff;color:var(--brand-primary);">Get Your Free Estimate</a>
     <a href="tel:+1{{ site.team.ake.phone }}" class="btn btn-secondary">Call {{ site.team.ake.phoneDisplay }}</a>
   </div>
+  <p style="font-size:var(--text-sm);opacity:0.85;margin-top:var(--space-md);">We typically book 2–3 weeks out. Call today to get on the schedule.</p>
 </section>
 
 {% block extra_structured_data %}
