@@ -1,0 +1,87 @@
+---
+layout: layouts/base.njk
+title: "Contact Us"
+description: "Get a free flooring estimate from Best Practice Flooring LLC. Call Ake at (503) 884-1711 or fill out our contact form. Serving Corvallis, Independence & the Mid-Willamette Valley."
+permalink: /contact/
+---
+
+<div class="page-header">
+  <h1>Contact Best Practice Flooring</h1>
+  <p>Get your free, no-obligation estimate. We'd love to hear about your project.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:var(--space-3xl);align-items:start;">
+
+      {# Contact Form #}
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-lg);color:var(--text-primary);">Request a Free Estimate</h2>
+        <form class="contact-form" action="https://formspree.io/f/placeholder" method="POST" style="max-width:none;">
+          <div class="form-group">
+            <label for="name" class="form-label">Your Name <span class="form-required" aria-label="required">*</span></label>
+            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="phone" class="form-label">Phone Number <span class="form-required" aria-label="required">*</span></label>
+            <input type="tel" id="phone" name="phone" class="form-input" required autocomplete="tel">
+          </div>
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="service" class="form-label">Service Interested In</label>
+            <select id="service" name="service" class="form-select">
+              <option value="">Select a service...</option>
+              {% for svc in site.services %}
+              <option value="{{ svc.name }}">{{ svc.name }}</option>
+              {% endfor %}
+              <option value="Other">Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message" class="form-label">Tell Us About Your Project</label>
+            <textarea id="message" name="message" class="form-textarea" rows="5" placeholder="Room size, current flooring, what you're looking for..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width:100%;">Send Request</button>
+        </form>
+      </div>
+
+      {# Contact Info #}
+      <div>
+        <h2 style="font-family:var(--font-display);font-size:var(--text-xl);font-weight:700;margin-bottom:var(--space-lg);color:var(--text-primary);">Reach Us Directly</h2>
+
+        <div style="margin-bottom:var(--space-2xl);">
+          <h3 style="font-size:var(--text-base);font-weight:600;color:var(--text-primary);margin-bottom:var(--space-sm);">Ake — Owner &amp; Installer</h3>
+          <p style="color:var(--text-secondary);">
+            <a href="tel:+1{{ site.team.ake.phone }}" style="color:var(--brand-primary);font-weight:600;font-size:var(--text-lg);text-decoration:none;">{{ site.team.ake.phoneDisplay }}</a>
+          </p>
+        </div>
+
+        <div style="margin-bottom:var(--space-2xl);">
+          <h3 style="font-size:var(--text-base);font-weight:600;color:var(--text-primary);margin-bottom:var(--space-sm);">Sarah — Scheduling &amp; Coordination</h3>
+          <p style="color:var(--text-secondary);">
+            <a href="tel:+1{{ site.team.sarah.phone }}" style="color:var(--brand-primary);font-weight:600;font-size:var(--text-lg);text-decoration:none;">{{ site.team.sarah.phoneDisplay }}</a>
+          </p>
+        </div>
+
+        <div style="margin-bottom:var(--space-2xl);">
+          <h3 style="font-size:var(--text-base);font-weight:600;color:var(--text-primary);margin-bottom:var(--space-sm);">Business Hours</h3>
+          <p style="color:var(--text-secondary);line-height:1.8;">
+            <strong>Monday – Friday:</strong> {{ site.hours.weekdays }}<br>
+            <strong>Saturday:</strong> {{ site.hours.saturday }}<br>
+            <strong>Sunday:</strong> {{ site.hours.sunday }}
+          </p>
+        </div>
+
+        <div style="margin-bottom:var(--space-2xl);">
+          <h3 style="font-size:var(--text-base);font-weight:600;color:var(--text-primary);margin-bottom:var(--space-sm);">Service Area</h3>
+          <p style="color:var(--text-secondary);line-height:1.8;">Based in Independence, OR. We serve Corvallis, Salem, Albany, Monmouth, Dallas, Philomath, and the entire Mid-Willamette Valley.</p>
+          <a href="/service-areas/" style="color:var(--brand-primary);font-weight:600;text-decoration:none;">View all service areas →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>

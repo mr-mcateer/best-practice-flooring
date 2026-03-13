@@ -1,0 +1,67 @@
+---
+layout: layouts/base.njk
+title: "Flooring Services"
+description: "Professional flooring installation in Corvallis, Independence & the Mid-Willamette Valley. Hardwood, luxury vinyl plank, tile, and laminate — installed by the owner."
+permalink: /services/
+---
+
+<div class="page-header">
+  <h1>Flooring Installation Services</h1>
+  <p>Expert installation of hardwood, LVP, tile, and laminate — all personally installed by Ake.</p>
+</div>
+
+<section class="section">
+  <div class="section-inner">
+    <div class="services-grid">
+      {% for svc in site.services %}
+      <div class="service-card">
+        <img src="/assets/images/services/{{ svc.icon }}.jpg" alt="{{ svc.name }} installation by Best Practice Flooring in the Mid-Willamette Valley" class="service-card-img" width="600" height="400" loading="lazy">
+        <div class="service-card-body">
+          <h2 style="font-size:var(--text-lg);">{{ svc.name }}</h2>
+          <p>{{ svc.description }}</p>
+          <a href="/services/{{ svc.slug }}/" class="service-card-link">
+            Learn more about {{ svc.shortName }}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt" aria-labelledby="process-heading">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 id="process-heading">Our Installation Process</h2>
+      <p>From estimate to final walkthrough — here's how we work.</p>
+    </div>
+    <div class="process-steps">
+      <div class="process-step">
+        <h3>Free Consultation</h3>
+        <p>Ake visits your home, measures the space, discusses options, and provides a transparent estimate — no obligation.</p>
+      </div>
+      <div class="process-step">
+        <h3>Material Selection</h3>
+        <p>We help you choose the right flooring for your lifestyle, budget, and home. We can source materials or install yours.</p>
+      </div>
+      <div class="process-step">
+        <h3>Professional Installation</h3>
+        <p>Ake installs your flooring with expert precision. We protect your home, work clean, and respect your schedule.</p>
+      </div>
+      <div class="process-step">
+        <h3>Final Walkthrough</h3>
+        <p>We walk through the finished project together. We're not done until you're completely satisfied with the result.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Ready to Get Started?</h2>
+  <p>Every project begins with a free estimate. Let's discuss your flooring needs.</p>
+  <div class="cta-buttons">
+    <a href="/contact/" class="btn btn-primary" style="background:#fff;color:var(--brand-primary);">Get a Free Estimate</a>
+    <a href="tel:+1{{ site.team.ake.phone }}" class="btn btn-secondary">Call {{ site.team.ake.phoneDisplay }}</a>
+  </div>
+</section>

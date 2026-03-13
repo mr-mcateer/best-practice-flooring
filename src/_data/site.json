@@ -1,0 +1,67 @@
+{
+  "name": "Best Practice Flooring LLC",
+  "tagline": "Tile & Flooring — Installed by Ake, Coordinated by Sarah",
+  "description": "Husband-and-wife flooring team specializing in tile installation across Corvallis, Independence & the Mid-Willamette Valley. Ake installs every floor personally.",
+  "url": "https://bestpracticeflooring.com",
+  "baseUrl": "/",
+  "location": {
+    "city": "Independence",
+    "state": "OR",
+    "region": "Mid-Willamette Valley",
+    "counties": ["Polk County", "Benton County"]
+  },
+  "team": {
+    "ake": {
+      "name": "Ake",
+      "title": "Owner & Installer",
+      "phone": "5038841711",
+      "phoneDisplay": "(503) 884-1711"
+    },
+    "sarah": {
+      "name": "Sarah",
+      "title": "Owner & Project Coordinator",
+      "phone": "5035698639",
+      "phoneDisplay": "(503) 569-8639"
+    }
+  },
+  "serviceAreas": [
+    "Independence", "Monmouth", "Dallas", "Salem", "Corvallis",
+    "Albany", "Philomath", "Adair Village", "Lewisburg",
+    "Tangent", "Jefferson", "Stayton"
+  ],
+  "services": [
+    {
+      "name": "Tile Flooring",
+      "slug": "tile-flooring",
+      "shortName": "Tile",
+      "description": "Our specialty. Ceramic, porcelain, and natural stone tile for floors, showers, backsplashes, and more. Precision cuts, level work, beautiful results.",
+      "icon": "tile"
+    },
+    {
+      "name": "Hardwood Flooring",
+      "slug": "hardwood-flooring",
+      "shortName": "Hardwood",
+      "description": "Classic hardwood installation, refinishing, and repair. Solid and engineered options in oak, maple, walnut, and more.",
+      "icon": "hardwood"
+    },
+    {
+      "name": "Luxury Vinyl Plank",
+      "slug": "luxury-vinyl-plank",
+      "shortName": "LVP",
+      "description": "Waterproof luxury vinyl plank flooring — durable, beautiful, and perfect for kitchens, bathrooms, and high-traffic areas.",
+      "icon": "lvp"
+    },
+    {
+      "name": "Laminate Flooring",
+      "slug": "laminate-flooring",
+      "shortName": "Laminate",
+      "description": "Affordable laminate flooring that looks like real wood or stone. Quick installation with lasting durability.",
+      "icon": "laminate"
+    }
+  ],
+  "hours": {
+    "weekdays": "7:00 AM – 6:00 PM",
+    "saturday": "8:00 AM – 2:00 PM",
+    "sunday": "Closed"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "main": [
+    { "label": "Home", "url": "/" },
+    { "label": "Services", "url": "/services/", "children": [
+      { "label": "Hardwood Flooring", "url": "/services/hardwood-flooring/" },
+      { "label": "Luxury Vinyl Plank", "url": "/services/luxury-vinyl-plank/" },
+      { "label": "Tile Flooring", "url": "/services/tile-flooring/" },
+      { "label": "Laminate Flooring", "url": "/services/laminate-flooring/" }
+    ]},
+    { "label": "Portfolio", "url": "/portfolio/" },
+    { "label": "About", "url": "/about/" },
+    { "label": "FAQ", "url": "/faq/" },
+    { "label": "Contact", "url": "/contact/" }
+  ]
+}
