@@ -61,6 +61,31 @@ layout: layouts/base.njk
 </section>
 {% endif %}
 
+<section class="section" aria-labelledby="related-services">
+  <div class="section-inner">
+    <div class="section-header">
+      <h2 id="related-services">Other Flooring We Install</h2>
+    </div>
+    <div class="services-grid">
+      {% for svc in site.services %}
+      {% if svc.shortName != serviceShort %}
+      <div class="service-card">
+        <img src="/assets/images/services/{{ svc.icon }}.jpg" alt="{{ svc.name }} installation" class="service-card-img" width="600" height="400" loading="lazy">
+        <div class="service-card-body">
+          <h3>{{ svc.name }}</h3>
+          <p>{{ svc.description }}</p>
+          <a href="/services/{{ svc.slug }}/" class="service-card-link">
+            Learn more
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+      {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
 <section class="cta-section">
   <h2>Ready for New {{ serviceShort }} Floors?</h2>
   <p>Get a free, no-obligation estimate for your {{ serviceShort | lower }} flooring project.</p>
@@ -76,16 +101,11 @@ layout: layouts/base.njk
   "@context": "https://schema.org",
   "@type": "Service",
   "serviceType": "{{ title }}",
-  "provider": {
-    "@type": "HomeAndConstructionBusiness",
-    "name": "{{ site.name }}",
-    "telephone": "+1{{ site.team.ake.phone }}"
-  },
+  "provider": {"@id": "{{ site.url }}/#business"},
   "areaServed": [
-    {"@type": "City", "name": "Independence"},
-    {"@type": "City", "name": "Corvallis"},
-    {"@type": "City", "name": "Salem"},
-    {"@type": "City", "name": "Albany"},
+    {% for area in site.serviceAreas %}
+    {"@type": "City", "name": "{{ area }}"}{% if not loop.last %},{% endif %}
+    {% endfor %},
     {"@type": "AdministrativeArea", "name": "Polk County, Oregon"},
     {"@type": "AdministrativeArea", "name": "Benton County, Oregon"}
   ],

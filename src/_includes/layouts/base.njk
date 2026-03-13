@@ -3,28 +3,28 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{{ title }} | {{ site.name }} | Corvallis &amp; Independence OR</title>
+  <title>{{ titleTag or title }} | Best Practice Flooring</title>
   <meta name="description" content="{{ description or site.description }}">
   <meta name="keywords" content="{{ keywords or 'flooring installation, hardwood floors, LVP flooring, tile installation, laminate flooring, Corvallis flooring, Independence Oregon, flooring contractor, floor installer near me, Mid-Willamette Valley' }}">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="{{ title }} | {{ site.name }}">
+  <meta property="og:title" content="{{ titleTag or title }} | Best Practice Flooring">
   <meta property="og:description" content="{{ description or site.description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
   <meta property="og:site_name" content="{{ site.name }}">
   <meta property="og:locale" content="en_US">
-  <meta property="og:image" content="{{ site.url }}/assets/images/hero/hero-main.jpg">
+  <meta property="og:image" content="{{ site.url }}{{ ogImage or '/assets/images/hero/hero-main.jpg' }}">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ title }} | {{ site.name }}">
+  <meta name="twitter:title" content="{{ titleTag or title }} | Best Practice Flooring">
   <meta name="twitter:description" content="{{ description or site.description }}">
-  <meta name="twitter:image" content="{{ site.url }}/assets/images/hero/hero-main.jpg">
+  <meta name="twitter:image" content="{{ site.url }}{{ ogImage or '/assets/images/hero/hero-main.jpg' }}">
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -65,8 +65,12 @@
         "@id": "{{ site.url }}/#business",
         "name": "{{ site.name }}",
         "description": "{{ site.description }}",
-        "telephone": ["+1{{ site.team.ake.phone }}", "+1{{ site.team.sarah.phone }}"],
-        "email": "bestpracticeflooringllc@gmail.com",
+        "telephone": "+1{{ site.team.ake.phone }}",
+        "email": "{{ site.email }}",
+        "contactPoint": [
+          {"@type": "ContactPoint", "telephone": "+1{{ site.team.sarah.phone }}", "contactType": "customer service", "name": "Sarah — Scheduling"}
+        ],
+        "sameAs": ["https://www.google.com/maps/place/Best+Practice+Flooring+LLC"],
         "url": "{{ site.url }}",
         "logo": "{{ site.url }}/favicon.svg",
         "image": "{{ site.url }}/assets/images/hero/hero-main.jpg",
@@ -110,6 +114,11 @@
           "bestRating": "5",
           "worstRating": "1"
         },
+        "review": [
+          {"@type": "Review", "author": {"@type": "Person", "name": "Jennifer L."}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Sarah made scheduling so easy, and Ake's tile work in our bathroom is beautiful."},
+          {"@type": "Review", "author": {"@type": "Person", "name": "Michael R."}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "Ake did an incredible job on our hardwood floors. Professional, on time, and quality exceeded expectations."},
+          {"@type": "Review", "author": {"@type": "Person", "name": "David & Karen T."}, "reviewRating": {"@type": "Rating", "ratingValue": "5"}, "reviewBody": "We had LVP installed throughout our entire first floor. The work was meticulous and done faster than expected."}
+        ],
         "hasOfferCatalog": {
           "@type": "OfferCatalog",
           "name": "Flooring Services",
